@@ -11,11 +11,14 @@ export default async function Characters(){
         <div className="flex flex-colw">
             <div className="py-[40px] flex justify-center flex-wrap gap-[30px]">
                 <Suspense fallback={
-                    <>
+                    <div className="flex justify-center flex-wrap">
                         <CardSkeleton />
                         <CardSkeleton />
                         <CardSkeleton />
-                    </>
+                        <CardSkeleton />
+                        <CardSkeleton />
+                        <CardSkeleton />
+                    </div>
                 }>
                     {data.results.map((film: any) => (
                         <div key={film.episode_id}>

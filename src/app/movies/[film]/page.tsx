@@ -14,10 +14,9 @@ export default async function MovieDetails( {
     const arrayCharacters: string[] = data.results[0].characters;
 
     const numberCharacters: string[] = arrayCharacters.map(url => getIdFromUrl(url));
-    console.log(numberCharacters)
 
     return(
-        <div className=" mt-[40px]">
+        <div className=" mt-[20px]">
             {/* SECCION DETALLE PELICULA */}
             <section className="flex gap-[50px] flex-wrap md:mx-[100px] lg:mx-[100px] xl:mx-[100px]">
                 <div className='grow drop-shadow-[2px_2px_2px_#000] flex justify-center'>
@@ -29,7 +28,7 @@ export default async function MovieDetails( {
                     <h4 className='drop-shadow-[2px_2px_2px_#000] font-[exo2] text-[20px] text-white text-center'>Director: <span className="text-starwars-yellow">{`"${data.results[0].director}"`}</span></h4>
                 </div>
             </section>
-            <section className='flex flex-col gap-[40px] md:mx-[100px] lg:mx-[100px] xl:mx-[100px]'>
+            <section className='mt-[20px] flex flex-col gap-[40px] md:mx-[100px] lg:mx-[100px] xl:mx-[100px]'>
                 <h2 className='drop-shadow-[2px_2px_2px_#000] font-[exo2] font-[600] text-[40px] text-starwars-yellow text-center'>Personajes</h2>
                 <div className='flex flex-wrap justify-center gap-[30px]'>
                     {numberCharacters.map(character => (
