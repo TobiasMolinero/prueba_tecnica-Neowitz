@@ -40,7 +40,14 @@
 }
 
 body {
-  background-color: #1c1c1c;
+  background-image: linear-gradient(
+    rgba(0,0,0,0.5), 
+    rgba(0,0,0,0.5)
+    ), 
+    url('/images/fondo-clones.webp');
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
 }
 
 *{

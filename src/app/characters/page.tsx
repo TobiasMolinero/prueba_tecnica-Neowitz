@@ -5,7 +5,7 @@ import CardCharacter from '@/components/CardCharacter';
 
 export default async function Characters(){
 
-    const response = await fetch(`https://swapi.dev/api/people/?page=1`);
+    const response = await fetch(`https://swapi.dev/api/people/?page=8`);
     const data = await response.json();
 
     return(

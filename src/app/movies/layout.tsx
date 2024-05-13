@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import './movies.css';
 
 export const metadata: Metadata = {
   title: "Peliculas - Star Wars Wiki",
