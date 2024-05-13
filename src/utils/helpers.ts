@@ -9,3 +9,10 @@ export const getIdFromUrl = (url: string): string => {
     
     return lastSegment;
 }
+
+export const getEyesColor = (colors: string): string[] => {
+    
+    let eyesColors;
+    
+    return eyesColors = colors.split(',');
+}
