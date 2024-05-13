@@ -1,3 +1,4 @@
+
 import { getEyesColor } from "@/utils/helpers"
 
 interface EyesColorProps{
@@ -6,34 +7,52 @@ interface EyesColorProps{
 
 export default function EyesColor({ colors }: EyesColorProps){
 
-    let twoColors: boolean;
-    let firstColor: string;
-    let secondColor: string;
-
     const eyesColors: string[] = getEyesColor(colors); 
-    console.log(eyesColors)
+    let firstColor: string = eyesColors[0].trim() || '';
+    let twoColors: boolean = false;
 
-    eyesColors.length > 1 ? twoColors = true : twoColors = false;
+    const colorMap: { [key: string]: string } = {
+        'hazel': '#b08d57',
+        'blue-gray': '#6b7a8f',
+        'blue': '#0000ff',
+        'red': '#ff0000',
+        'yellow': '#ffff00',
+        'green': '#008000',
+        'brown': '#a52a2a',
+        'pink': '#ffc0cb',
+        'gold': '#ffd700',
+        'black': '#000',
+        'white': '#fff',
+        'orange': '#ffa500'
+    };
 
-    if(twoColors){
-        firstColor = eyesColors[0].trim();
-        secondColor = eyesColors[1].trim();
+    let colorStyle: string;
+
+    if(eyesColors.length > 1){
+        twoColors = true;
+        colorStyle = `linear-gradient(
+            to right,
+            ${firstColor} 50%,
+            ${eyesColors[1].trim()} 50%
+        )`
     } else {
-        firstColor = eyesColors[0].trim();
-        secondColor = '';
+        colorStyle = colorMap[firstColor];
     }
-    
-    firstColor === 'hazel' ? firstColor = '#b08d57' : null;
-    firstColor === 'blue-gray' ? firstColor = '#6b7a8f' : null;
-
-    secondColor === 'hazel' ? firstColor = '' : null;
-    secondColor === 'blue-gray' ? firstColor = '#6b7a8f' : null;
 
 
-    return <span className={`
-                flex justify-center items-center w-[22px] h-[22px]
-                ${firstColor === 'unknown' ? '' : 'border border-white shadow-[2px_2px_2px_#000]'}
-                ${twoColors ? `bg-gradient-to-r from-[${firstColor}] from-50% to-[${secondColor}] to-50%` : `bg-[${firstColor}]`}
+    // if(twoColors){
+    //     firstColor = eyesColors[0].trim();
+    //     secondColor = eyesColors[1].trim();
+    // } else {
+    //     firstColor = eyesColors[0].trim();
+    //     secondColor = '';
+    // }
 
-            `}>{firstColor === 'unknown' ? 'N/D' : ''}</span>
+
+    // console.log(firstColor)
+    // console.log(secondColor)
+
+    return (
+        <span style={twoColors ? {backgroundImage: colorStyle} : {background: colorStyle}} className={`flex justify-center items-center w-[22px] h-[22px] ${firstColor === 'unknown' ? '' : 'border border-white shadow-[2px_2px_2px_#000]'}`}>{firstColor === 'unknown' ? 'N/D' : ''}</span>
+    );
 }

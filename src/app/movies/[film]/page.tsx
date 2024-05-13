@@ -1,6 +1,6 @@
 import Image from 'next/image';
+import dynamic from 'next/dynamic'
 import iconoFilm from '@/assets/icono-film.svg';
-import CardCharacter from '@/components/CardCharacter';
 import { getIdFromUrl } from '@/utils/helpers';
 
 export default async function MovieDetails( { 
@@ -9,7 +9,9 @@ export default async function MovieDetails( {
     params: { film: string };
 }){
 
-    const response = await fetch(`https://swapi.dev/api/films/?search=${params.film}`)
+    const CardCharacter = dynamic(() => import('@/components/CardCharacter'));
+
+    const response = await fetch(`https://swapi.dev/api/films/?search=${params.film}`);
     const data = await response.json();
     const arrayCharacters: string[] = data.results[0].characters;
 
@@ -30,10 +32,10 @@ export default async function MovieDetails( {
             </section>
             <section className='mt-[20px] flex flex-col gap-[40px] md:mx-[100px] lg:mx-[100px] xl:mx-[100px]'>
                 <h2 className='drop-shadow-[2px_2px_2px_#000] font-[exo2] font-[600] text-[40px] text-starwars-yellow text-center'>Personajes</h2>
-                <div className='flex flex-wrap justify-center gap-[30px]'>
+                <div className='flex flex-wrap justify-center gap-[30px] mb-[40px]'>
                     {numberCharacters.map(character => (
                         <div key={character}>
-                            <CardCharacter id={character} />
+                            <CardCharacter id={character} dataCharacter={[]} />
                         </div>
                     ))}
                 </div>

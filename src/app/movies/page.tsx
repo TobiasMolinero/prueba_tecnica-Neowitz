@@ -8,7 +8,7 @@ export default async function Characters(){
     let data = await response.json();
     
     return(
-        <div className="flex flex-colw">
+        <div className="flex flex-col">
             <div className="py-[40px] flex justify-center flex-wrap gap-[30px]">
                 <Suspense fallback={
                     <div className="flex justify-center flex-wrap">

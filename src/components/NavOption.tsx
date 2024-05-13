@@ -15,8 +15,8 @@ export default function NavOption({text, src, alt}: NavOptionProps){
         <div className="grow h-[400px] lg:w-[40%] flex flex-col justify-center items-center bg-[#1c1c1c67] border border-[#ffd90085] rounded-[15px] sm:w-full md:w-full">
             <div className="relative grow flex flex-col items-center justify-center cursor-pointer group">
                 <Link href={text === 'Personajes' ? '/characters' : '/movies'}>
-                    <div className="drop-shadow-[2px_2px_6px_#000] h-[270px] group-hover:scale-[1.05] transition-transform duration-[0.3s]">
-                        <Image src={src} alt={alt} height={270} width={200} />
+                    <div className="drop-shadow-[2px_2px_6px_#000] group-hover:scale-[1.05] transition-transform duration-[0.3s]">
+                        <Image src={src} alt={alt} height={270} width={200} priority={true}/>
                     </div>
                     <h3 className="absolute 
                                    bottom-[40px] 
