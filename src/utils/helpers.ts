@@ -16,3 +16,13 @@ export const getEyesColor = (colors: string): string[] => {
     
     return eyesColors = colors.split(',');
 }
+
+export const getCharacters = async(page: number) => {
+    try {
+        const response = await fetch(`https://swapi.dev/api/people/?page=${page}`)
+        const data = await response.json();
+        return data.results;
+    } catch (error) {
+        return {error}
+    }
+}

@@ -11,7 +11,7 @@ export default async function Characters(){
         <div className="flex flex-col">
             <div className="py-[40px] flex justify-center flex-wrap gap-[30px]">
                 <Suspense fallback={
-                    <div className="flex justify-center flex-wrap">
+                    <div className="flex justify-center flex-wrap gap-[30px]">
                         <CardSkeleton />
                         <CardSkeleton />
                         <CardSkeleton />
