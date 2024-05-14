@@ -1,6 +1,7 @@
 import CardFilm from "@/components/CardFilm";
 import CardSkeleton from "@/components/CardSkeleton";
 import { Suspense } from "react";
+import type { Film } from '@/utils/interfaces';
 
 export default async function Characters(){
 
@@ -20,7 +21,7 @@ export default async function Characters(){
                         <CardSkeleton />
                     </div>
                 }>
-                    {data.results.map((film: any) => (
+                    {data.results.map((film: Film) => (
                         <div key={film.episode_id}>
                             <div>
                                 <CardFilm numberEpisode={film.episode_id} title={film.title} />

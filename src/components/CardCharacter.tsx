@@ -4,10 +4,11 @@ import iconCharacter from '@/assets/stormtrooper.svg';
 import iconMale from '@/assets/icon-male.svg';
 import iconFemale from '@/assets/icon-female.svg';
 import EyesColor from './EyesColor';
+import type { Characters } from '@/utils/interfaces';
 
 interface CharacterProps {
     id: string
-    dataCharacter: string[]
+    dataCharacter: Characters
 }
 
 export default async function CardCharacterFilm({ id, dataCharacter }: CharacterProps){

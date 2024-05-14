@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import CardSkeleton from "@/components/CardSkeleton";
 import CardCharacter from '@/components/CardCharacter';
 import { getCharacters } from "@/utils/helpers";
+import type { Characters } from "@/utils/interfaces";
 
 export default async function Characters({
     searchParams
@@ -32,7 +33,7 @@ export default async function Characters({
                     </div>
                 }>
                 
-                {characters.map((character: any) => (
+                {characters.map((character: Characters) => (
                     <div key={character.name}>
                         <div>
                             <CardCharacter id="" dataCharacter={character} />
