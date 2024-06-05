@@ -15,7 +15,7 @@ export default async function CharacterDetails({ params } : { params: {character
     const mass = data.results[0].mass; 
 
     return (
-        <div className="mt-[100px]">
+        <div className="mt-[60px]">
             {/* SECCION DETALLE PERSONAJE*/}
             <section className="flex gap-[50px] flex-wrap md:mx-[100px] lg:mx-[100px] xl:mx-[100px]">
                 <div className='grow drop-shadow-[2px_2px_2px_#000] flex justify-center'>

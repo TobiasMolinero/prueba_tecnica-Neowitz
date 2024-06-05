@@ -35,7 +35,25 @@ export default async function MovieDetails( {
                 <div className='flex flex-wrap justify-center gap-[30px] mb-[40px]'>
                     {numberCharacters.map(character => (
                         <div key={character}>
-                            <CardCharacter id={character} dataCharacter={[]} />
+                            <CardCharacter id={character} 
+                                           dataCharacter={{
+                                                name: '',
+                                                height: '',
+                                                mass: '',
+                                                hair_color: '',
+                                                skin_color: '',
+                                                eye_color: '',
+                                                birth_year: '',
+                                                gender: '',
+                                                homeworld: '',
+                                                films: [''],
+                                                species: [''],
+                                                vehicles: [''],
+                                                starships: [''],
+                                                created: '',
+                                                edited: '',
+                                                url: ''
+                                           }} />
                         </div>
                     ))}
                 </div>
